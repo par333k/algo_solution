@@ -15,7 +15,6 @@ function solution(orders, course) {
     // 2명 이상 손님들이 주문한 2개 이상의 요리중 요리 코스 개수(courseSet에 있는 수)에 맞는 요리 조합(문자열)이 있을때
     // 해당되는 요리중 가장 여러번 주문된(중복된) 요리 조합이 필요함
     function combination(result, index, str) {
-        console.log('재귀', result, index, str);
         if (courseSet.has(result.length)) {
             let count = orderedCountMap.get(result) || 0;
 //            console.log('요리 코스 중복회수',result, count);
@@ -27,7 +26,6 @@ function solution(orders, course) {
             }
         }
         for (let i = index; i < str.length; i++) { // orders에 담긴 문자열을 반복
-            console.log('포문', i, 'result', result);
             combination(result + str[i], i + 1, str);
         }
     }
