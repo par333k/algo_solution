@@ -1,7 +1,9 @@
 // https://programmers.co.kr/learn/courses/30/lessons/72411
 // 메뉴 리뉴얼 문제
 // 못풀어서 주석으로 이해부터
+// 재귀는 손에 쓰면서 꼼꼼히 실행흐름을 익혀봐야겠다
 // 재귀 너무 어렵다...
+// 코드 출처 https://velog.io/@alvin/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4-%EB%AC%B8%EC%A0%9C%ED%92%80%EC%9D%B4-%EB%A9%94%EB%89%B4-%EB%A6%AC%EB%89%B4%EC%96%BC-Javascript
 
 const orders = ["ABCDE", "AB", "CD", "ADE", "XYZ", "XYZ", "ACD"];
 const course = [2,3,5];
