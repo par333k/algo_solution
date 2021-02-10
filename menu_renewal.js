@@ -67,3 +67,48 @@ function solution(orders, course) {
 }
 
 console.log(solution(orders, course));
+
+
+/* 1차 수정해본거, 반복문으로도 시도해보자.
+function solution(orders, course) {
+    //주문된 숫자, 최대 숫자, 요리 코스숫자.
+    const orderCount = new Map();
+    const maxCount = new Map();
+    // orders 정렬 - 순서에 상관없이 조합만 들어있으면 됨
+    orders = orders.map(order => {
+        return order.split("").sort().join("");
+    });
+
+    function orderRecursion(result, idx, str) {
+        if (course.includes(result.length)) {
+            let cnt = orderCount.get(result) || 0;
+            orderCount.set(result, ++cnt);
+            const max = maxCount.get(result.length) || 0;
+            if(max < cnt) {
+                maxCount.set(result.length, cnt);
+            }
+        }
+
+        for (let i = idx; i < str.length; i++) {
+//            console.log(i);
+            orderRecursion(result + str[i], i + 1, str);
+        }
+    }
+
+//    console.log(orders);
+    for (let i = 0; i < orders.length; i++ ) {
+        let char = orders[i];
+//        console.log(char);
+        orderRecursion("", 0, char);
+    }
+
+    let answer = course.map(length => {
+        const max = maxCount.get(length);
+        const result = Array.from(orderCount);
+        return result.filter(e => { // e[0] = key, e[1] = value
+            return e[0].length === length && e[1] >= 2 && e[1] === max
+        }).map(e => e[0]);
+    }).flatMap(e => e).sort();
+//    console.log(answer);
+    return answer;
+}*/
