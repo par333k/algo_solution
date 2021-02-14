@@ -3,7 +3,7 @@
 
 const numbers = [2,1,3,4,1];
 
-function solution(numbers) {
+function solution(numbers) { 
     let answer = [];
     //순서대로 numbers 배열 숫자 더한뒤 set 사용
     //오름차순 sort
