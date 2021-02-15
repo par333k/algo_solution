@@ -1,9 +1,9 @@
 // https://programmers.co.kr/learn/courses/30/lessons/68644
-// 두 개 뽑아서 더하기 문제
+// 두 개 뽑아서 더하기 문제 
 
 const numbers = [2,1,3,4,1];
 
-function solution(numbers) {
+function solution(numbers) { 
     let answer = [];
     //순서대로 numbers 배열 숫자 더한뒤 set 사용
     //오름차순 sort
