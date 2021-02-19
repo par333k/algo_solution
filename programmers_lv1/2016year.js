@@ -15,7 +15,7 @@ function solution(a, b) {
     }
     let firstday = days%7;
     let firstdayName = dayname[firstday];
-    //firstdayName = a월의 1일 요일
+
     let resultday = b%7;
     let nowIdx = dayname.indexOf(firstdayName);
     let answerIdx = nowIdx+resultday -1
