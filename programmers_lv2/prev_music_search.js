@@ -50,7 +50,7 @@ function solution(m, musicinfos) {
         musicName.push(str[2]);
         times.push(playtime);
     }
-    let count = 0;
+
     let name = '(None)';
 
     for(let i = 0; i < musicArr.length; i++) {
