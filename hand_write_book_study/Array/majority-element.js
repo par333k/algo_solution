@@ -34,11 +34,15 @@
  *  3-2. 가운데 수를 반환한다.
  *  시간복잡도: O(nlogn)
  *  공간복잡도: O(1)
+ *
+ *  엣지케이스
+ *  nums = [1]
  */
 
 //const arr = [3,2,1,3,1,3,3,4,3];
 //const arr = [6,5,5];
-const arr = [3,2,3];
+//const arr = [3,2,3];
+const arr = [1];
 // idea 1
 function solution(arr) {
     let temp = 0;
