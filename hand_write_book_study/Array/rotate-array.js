@@ -144,3 +144,5 @@ function bestSolve(nums, k) {
    reverse(0, k-1) // reverse first part ---><----
    reverse(k, nums.length-1)// reverse second part --->----->
 }
+
+console.log(bestSolve(nums, k));
