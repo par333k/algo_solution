@@ -28,10 +28,11 @@ const board = [["A","C","B"],["G","O","G"],["I","J","D"]];
 const word = "AGIJ";
 
 function solution(board, word) {
-    // 상, 하, 좌, 우, x는 1차원 배열의 인덱스, y는 2차원 배열의 인덱스, x는 열, y는 행
+    // 상, 하, 좌, 우, x는 1차원 배열의 인덱스, y는 2차원 배열의 인덱스, x는 행, y는 열
     const direction = [[-1, 0], [1, 0], [0, -1], [0, 1]];
     if (board.length === 0) return false;
-    // 1차원 배열의 길이는
+    // 1차원 배열의 길이는 행, 행의 길이는 세로 길이.
+    // 2차원 배열의 길이는 열, 열의 길이는 가로 길이.
     const height = board.length;
     const width = board[0].length;
 
