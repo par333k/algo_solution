@@ -62,3 +62,67 @@ function solution(l1, l2) {
     }
     return (carry.val === 0) ? carry.next : carry;
 }
+
+
+function solution2(l1, l2) {
+
+    function reverse(head) {
+        let prev = null;
+        let curr = head;
+
+        while(curr != null) {
+            let next_temp = curr.next;
+            curr.next = prev;
+
+            prev = curr;
+            curr = next_temp;
+        }
+        return prev;
+    }
+
+    let r_l1 = reverse(l1);
+    let r_l2 = reverse(l2);
+
+    let res_head = null;
+
+    let carry = 0;
+    let sum = 0;
+    while ( r_l1 != null || r_l2 != null )  {
+        let num1 = 0;
+        let num2 = 0;
+
+        if (r_l1 != null) {
+            num1 = r_l1.val;
+            r_l1 = r_l1.next;
+        }
+        if (r_l2 != null) {
+            num2 = r_l2.val;
+            r_l2 = r_l2.next;
+        }
+        sum = num1 + num2 + carry;
+        carry = Math.floor(sum / 10);
+        sum = Math.round(sum % 10);
+
+        let node = new ListNode(sum);
+        if (res_head == null) {
+            res_head = node;
+        } else {
+            let temp = res_head;
+            res_head = node;
+            node.next = temp;
+        }
+    }
+
+    if (carry !== 0) {
+        let node = new ListNode(carry);
+        let temp = res_head;
+        res_head = node;
+        node.next = temp;
+    }
+    return res_head;
+}
+
+
+function solution3(l1, l2) {
+
+}
