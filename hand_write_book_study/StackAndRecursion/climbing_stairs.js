@@ -65,6 +65,21 @@ var climbStairs = function(n, memo = new Array()) {
     // S.C: O(N)
 };
 
+console.log(climbStairs(n));
+
+// S.C: O(1)
+var climbStairs = function(n) {
+    let step2Before = 1;
+    let step1Before = 1;
+    for (let i = 2; i <= n; i++) {
+        let tmp = step1Before;
+        step1Before = step2Before + step1Before;
+        step2Before = tmp;
+    }
+    return n > 0 ? step1Before : 0;
+};
+
+
 /*
 DP
 
@@ -93,6 +108,7 @@ var climbStairs = function(n) {
     // T.C: O(N)
     // S.C: O(N)
 };
+
 
 // 피보나치
 var climbStairs = function(n) {    
