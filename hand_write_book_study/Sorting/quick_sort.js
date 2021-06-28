@@ -9,4 +9,29 @@
  *  피벗 값이 마지막 라스트 요소일 경우 최악인 O(n^2)의 시간복잡도가 된다.
  *  따라서 무작위로 피벗을 결정해 최악을 최소화하거나 중간 값을 찾아 low / high 분배를 하면 안정적으로 O(nlogn)의 시간 복잡도를 가진다.
  */
+const arr = [8,2,6,4,5];
+function quick_sort(arr) {
+    let length = arr.length;
+    if(length < 2) return arr;
 
+    let low = [], same = [], high = [];
+    let pivot = arr[getRandomInt(0, length)];
+    for (let item of arr) {
+        if(item < pivot) {
+            low.push(item);
+        } else if ( item === pivot) {
+            same.push(item);
+        } else if (item > pivot) {
+            high.push(item);
+        }
+    }
+    return quick_sort(low) + same + quick_sort(high)
+}
+
+function getRandomInt(min, max) { 
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min)) + min; //최댓값은 제외, 최솟값은 포함
+}
+
+console.log(quick_sort(arr));
